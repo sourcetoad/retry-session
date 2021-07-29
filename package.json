@@ -1,0 +1,39 @@
+{
+  "name": "@sourcetoad/retry-session",
+  "version": "0.1.0",
+  "description": "A simple-but-flexible utility for executing tasks on intervals and resolving with promises",
+  "main": "dist/retry-session.js",
+  "module": "dist/retry-session.js",
+  "scripts": {
+    "watch": "webpack --watch --progress --mode development",
+    "dev": "webpack --progress --mode development",
+    "prod": "webpack --progress --mode production",
+    "test": "jest",
+    "lint": "eslint src/",
+    "es-check": "es-check es5 dist/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/sourcetoad/retry-session.git"
+  },
+  "author": "Sourcetoad, LLC",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/sourcetoad/retry-session/issues"
+  },
+  "homepage": "https://github.com/sourcetoad/retry-session#readme",
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.14.7",
+    "@babel/preset-env": "^7.14.8",
+    "@jest/globals": "^27.0.6",
+    "babel-loader": "^8.2.2",
+    "core-js": "^3.15.2",
+    "es-check": "^5.2.4",
+    "eslint": "^7.31.0",
+    "jest": "^27.0.6",
+    "regenerator-runtime": "^0.13.9",
+    "webpack": "^5.47.0",
+    "webpack-cli": "^4.7.2"
+  },
+  "dependencies": {}
+}
