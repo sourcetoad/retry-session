@@ -1,6 +1,6 @@
 {
   "name": "@sourcetoad/retry-session",
-  "version": "0.2.2",
+  "version": "1.0.0",
   "description": "A simple-but-flexible utility for executing tasks on intervals and resolving with promises",
   "main": "dist/retry-session.js",
   "module": "dist/retry-session.js",
