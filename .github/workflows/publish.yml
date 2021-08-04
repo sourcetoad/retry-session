@@ -5,6 +5,7 @@ on:
 
 jobs:
   publish:
+    environment: production
     runs-on: ubuntu-latest
 
     name: Publish
@@ -16,7 +17,7 @@ jobs:
         with:
           node-version: 14
           cache: 'yarn'
-          registry-url: 'https://npm.pkg.github.com'
+          registry-url: 'https://registry.npmjs.org'
 
       - name: Yarn Install
         run: yarn install --network-concurrency 1
@@ -24,7 +25,16 @@ jobs:
       - name: Build
         run: yarn prod
 
-      - name: Publish
+      - name: Publish (NPM)
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - uses: actions/setup-node@v2
+        with:
+          registry-url: 'https://npm.pkg.github.com'
+
+      - name: Publish (GPR)
         run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

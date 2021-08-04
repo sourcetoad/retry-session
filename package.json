@@ -12,9 +12,6 @@
     "lint": "eslint src/",
     "es-check": "es-check es5 dist/*.js"
   },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
   "repository": {
     "type": "git",
     "url": "git://github.com/sourcetoad/retry-session.git"
