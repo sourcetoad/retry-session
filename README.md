@@ -1,7 +1,13 @@
 # RetrySession
 A simple-but-flexible utility for executing tasks on intervals and resolving with promises.
 
-## Install
+## Install (NPM)
+Add package to `package.json`
+```shell
+yarn add @sourcetoad/retry-session
+```
+
+## Install (GPR)
 Create `.npmrc` next to `package.json`
 ```text
 @sourcetoad:registry=https://npm.pkg.github.com
