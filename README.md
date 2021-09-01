@@ -131,3 +131,12 @@ const startPrimaryPoll = () => {
 
 startPrimaryPoll();
 ```
+
+### Configuration
+The following parameters are available to configure the session on instantiation:
+1. **callback** _async function_ - If it resolves, resolve this promise with the result. If it rejects, retry.
+1. **retryPeriod** _number_ - Time to retry in milliseconds
+1. **timeLimit** _bool (optional)_ - Time to give up in milliseconds. falsy to never timeout
+1. **waitFirst** _bool (optional)_ - Whether to wait retryPeriod before trying the first time
+
+An instance of `RetrySession` has a public property `waitFirst` which can be modified at any time.
