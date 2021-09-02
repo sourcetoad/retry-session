@@ -35,10 +35,9 @@ export default class RetrySession {
     _timeLimit = null;
 
     /**
-     * @private
      * @type {boolean}
      */
-    _waitFirst = false;
+    waitFirst = false;
 
     /**
      * Promise resolves with result of callback or rejects when timeLimit is reached.
@@ -56,7 +55,7 @@ export default class RetrySession {
         this._callback = callback;
         this._retryPeriod = retryPeriod;
         this._timeLimit = timeLimit;
-        this._waitFirst = !!waitFirst;
+        this.waitFirst = !!waitFirst;
     }
 
     start() {
@@ -71,8 +70,8 @@ export default class RetrySession {
             }
 
             const iter = () => {
-                if (this._waitFirst) {
-                    this._waitFirst = false;
+                if (this.waitFirst) {
+                    this.waitFirst = false;
                     this._retryTimer = setTimeout(iter, this._retryPeriod);
                 } else {
                     this._callback()
