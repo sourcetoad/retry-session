@@ -17,6 +17,7 @@ module.exports = {
         filename: 'retry-session.js',
         library: 'RetrySession',
         libraryTarget: 'umd',
+        globalObject: "typeof self !== 'undefined' ? self : this",
         environment: {
             arrowFunction: false,
             bigIntLiteral: false,
