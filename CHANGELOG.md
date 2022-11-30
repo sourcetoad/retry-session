@@ -1,3 +1,6 @@
+# v1.2.1 (November 30, 2022)
+* Add release process documentation
+
 # v1.2.0 (November 29, 2022)
 * CDWS-3 - support Node.js
 * CVE-2022-3517 - update minimatch to fix vulnerability allowing ReDoS
