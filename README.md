@@ -140,3 +140,9 @@ The following parameters are available to configure the session on instantiation
 1. **waitFirst** _bool (optional)_ - Whether to wait retryPeriod before trying the first time
 
 An instance of `RetrySession` has a public property `waitFirst` which can be modified at any time.
+
+### Creating a release
+* Update `package.json` with `"version": "X.Y.Z"`
+* Create branch `release-X.Y.Z`
+* Commit as `build: version X.Y.Z tagged`
+* Tag like `git tag -a vX.Y.Z -m "updated to version vX.Y.Z"`
