@@ -19,7 +19,7 @@ jobs:
           cache: 'yarn'
 
       - name: Yarn Install
-        run: yarn install --network-concurrency 1
+        run: yarn install
 
       - name: Lint
         run: yarn lint
@@ -29,6 +29,8 @@ jobs:
 
       - name: Build
         run: yarn prod
+        env:
+          NODE_OPTIONS: '--openssl-legacy-provider'
 
       - name: ES Check
         run: yarn es-check
