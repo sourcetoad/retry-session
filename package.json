@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/sourcetoad/retry-session#readme",
   "devDependencies": {
+    "@babel/core": "^7.14.7",
     "@babel/eslint-parser": "^7.14.7",
     "@babel/preset-env": "^7.14.8",
     "@jest/globals": "^27.0.6",
