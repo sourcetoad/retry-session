@@ -106,7 +106,7 @@ const umdConfig = {
                 /\/core-js\//,
             ],
         }),
-    //terser(),
+        terser(),
     ],
 };
 
