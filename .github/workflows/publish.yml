@@ -1,6 +1,5 @@
 name: Publish to GitHub Packages
 env:
-  NODE_VERSION: 20
   NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 on:
   release:
@@ -18,7 +17,7 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v4
         with:
-          node-version: ${NODE_VERSION}
+          node-version: 20
           cache: 'npm'
           registry-url: 'https://npm.pkg.github.com'
 
@@ -33,7 +32,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: ${NODE_VERSION}
+          node-version: 20
           cache: 'npm'
           registry-url: 'https://npm.pkg.github.com'
 
