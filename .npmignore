@@ -5,6 +5,7 @@ src
 tests
 .eslintignore
 .eslintrc.cjs
+.nvmrc
 jest.config.cjs
 rollup.config.js
 tsconfig.json
