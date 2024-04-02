@@ -1,34 +1,34 @@
 name: Lint/Test/Build
+env:
+  NODE_VERSION: 20
+  NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 on: [push]
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node: ['12', '14']
 
-    name: Node ${{ matrix.node }}
+    name: Lint/Test/Build
     steps:
       - uses: actions/checkout@v4
 
-      - name: Setup node
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node }}
-          cache: 'yarn'
+          node-version: ${NODE_VERSION}
+          cache: 'npm'
 
-      - name: Yarn Install
-        run: yarn install --network-concurrency 1
+      - name: NPM Install
+        run: npm install
 
       - name: Lint
-        run: yarn lint
+        run: npm run lint
 
       - name: Test
-        run: yarn test
+        run: npm run test
 
       - name: Build
-        run: yarn prod
+        run: npm run prod
 
       - name: ES Check
-        run: yarn es-check
+        run: npm run es-check

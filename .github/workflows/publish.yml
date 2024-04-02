@@ -1,4 +1,7 @@
 name: Publish to GitHub Packages
+env:
+  NODE_VERSION: 20
+  NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 on:
   release:
     types: [published]
@@ -15,26 +18,24 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v4
         with:
-          node-version: 14
-          cache: 'yarn'
-          registry-url: 'https://registry.npmjs.org'
+          node-version: ${NODE_VERSION}
+          cache: 'npm'
+          registry-url: 'https://npm.pkg.github.com'
 
-      - name: Yarn Install
-        run: yarn install --network-concurrency 1
+      - name: NPM Install
+        run: npm install
 
       - name: Build
-        run: yarn prod
+        run: npm run prod
 
       - name: Publish (NPM)
         run: npm publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - uses: actions/setup-node@v4
         with:
+          node-version: ${NODE_VERSION}
+          cache: 'npm'
           registry-url: 'https://npm.pkg.github.com'
 
       - name: Publish (GPR)
         run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
