@@ -1,2 +1,10 @@
 .github
 .idea
+node_modules
+src
+tests
+.eslintignore
+.eslintrc.cjs
+jest.config.cjs
+rollup.config.js
+tsconfig.json
