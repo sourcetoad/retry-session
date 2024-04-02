@@ -1,6 +1,4 @@
 name: Publish to GitHub Packages
-env:
-  NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 on:
   release:
     types: [published]
@@ -29,6 +27,8 @@ jobs:
 
       - name: Publish (NPM)
         run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - uses: actions/setup-node@v4
         with:
@@ -38,3 +38,5 @@ jobs:
 
       - name: Publish (GPR)
         run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
