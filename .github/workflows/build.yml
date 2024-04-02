@@ -1,6 +1,4 @@
 name: Lint/Test/Build
-env:
-  NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 on: [push]
 
 jobs:
