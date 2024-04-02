@@ -3,7 +3,7 @@ import { nodeResolve } from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import terser from '@rollup/plugin-terser';
 
-const name = 'OnDeckSdk';
+const name = 'RetrySession';
 
 /**
  * ESM build (Web & node)
@@ -52,11 +52,7 @@ const commonJsConfig = {
 };
 
 /**
- * UMD build for projects like ITV & Signage that can't use esm/commonjs modules
- *
- * NOTE: As of 2024-03-14, this build is babel-ed to the lowest version of Chrome that most
- *       itv & signage device can use. Eventually, that might change and we can raise the
- *       Chrome version.
+ * UMD build for older projects
  *
  * @type {import('rollup').RollupOptions}
  */
