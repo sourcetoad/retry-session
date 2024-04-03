@@ -13,7 +13,7 @@ module.exports = {
     moduleNameMapper: {
         '^@js/(.*)$': '<rootDir>/src/$1',
     },
-    modulePathIgnorePatterns: [ 'lib/*' ],
+    modulePathIgnorePatterns: [ 'dist/*' ],
     preset: 'ts-jest',
     rootDir: '.',
     transform: { '^.+\\.ts?$': 'ts-jest' },
