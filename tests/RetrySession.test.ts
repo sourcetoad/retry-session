@@ -1,4 +1,4 @@
-import 'regenerator-runtime/runtime.js';
+import 'regenerator-runtime/runtime';
 
 import RetrySession from '@js/RetrySession';
 
@@ -9,7 +9,7 @@ const flushPromises = async () => {
 
 beforeEach(() => {
     jest.useFakeTimers();
-})
+});
 
 test('retry 5 times without time limit', async () => {
     // region Arrange
@@ -37,7 +37,7 @@ test('retry 5 times without time limit', async () => {
     // endregion
 
     // region Assert
-    await promise.then(() => expect(callback).toBeCalledTimes(5));
+    await promise.then(() => expect(callback).toHaveBeenCalledTimes(5));
     await expect(promise).resolves.toEqual('success');
     // endregion
 });
